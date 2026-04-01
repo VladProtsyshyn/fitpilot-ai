@@ -11,6 +11,7 @@ function ProfilePage() {
         age: '',
         weight: '',
         height: '',
+        goal: '',
     });
 
     const handleChange = (event) => {
@@ -34,6 +35,7 @@ function ProfilePage() {
             <p>Age: {profile.age}</p>
             <p>Weight: {profile.weight}</p>
             <p>Height: {profile.height}</p>
+            <p>Goal: {profile.goal}</p>
 
             <div>
                 <label>
@@ -86,6 +88,19 @@ function ProfilePage() {
                 />
                 </label>
             </div>
+
+            <div>
+                <label>
+                Goal
+                <select name="goal" value={formData.goal} onChange={handleChange}>
+                    <option value="">Select goal</option>
+                    <option value="lose weight">Lose weight</option>
+                    <option value="maintain">Maintain</option>
+                    <option value="gain muscle">Gain muscle</option>
+                </select>
+                </label>
+            </div>
+
 
             <button type="button" onClick={handleSaveProfile}>
                 Save profile

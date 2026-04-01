@@ -5,6 +5,7 @@ const initialState = {
     age: '',
     weight: '',
     height: '',
+    goal: '',
 };
 
 const profileSlice = createSlice({
@@ -12,14 +13,16 @@ const profileSlice = createSlice({
     initialState,
     reducers: {
         setProfile(state, action) {
-            state.name = action.payload.name;
-            state.age = action.payload.age;
-            state.weight = action.payload.weight;
-            state.height = action.payload.height;
+        state.name = action.payload.name;
+        state.age = action.payload.age;
+        state.weight = action.payload.weight;
+        state.height = action.payload.height;
+        state.goal = action.payload.goal;
         },
     },
 });
 
 export const { setProfile } = profileSlice.actions;
 export default profileSlice.reducer;
+
 
