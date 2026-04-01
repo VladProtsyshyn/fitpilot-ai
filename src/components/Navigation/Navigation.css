@@ -1,0 +1,23 @@
+nav {
+    padding: 16px 24px;
+    background-color: #f3f4f6;
+    border-bottom: 1px solid #d1d5db;
+}
+
+ul {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: #111827;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #2563eb;
+}
