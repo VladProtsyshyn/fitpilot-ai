@@ -1,34 +1,99 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setName } from '../../store/slices/profileSlice';
+import { setProfile } from '../../store/slices/profileSlice';
 
 function ProfilePage() {
-    const [inputValue, setInputValue] = useState('');
     const dispatch = useDispatch();
-    const name = useSelector((state) => state.profile.name);
+    const profile = useSelector((state) => state.profile);
 
-    const handleSaveName = () => {
-        dispatch(setName(inputValue));
+    const [formData, setFormData] = useState({
+        name: '',
+        age: '',
+        weight: '',
+        height: '',
+    });
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormData((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }));
+    };
+
+    const handleSaveProfile = () => {
+        dispatch(setProfile(formData));
     };
 
     return (
         <div>
             <h1>Profile Page</h1>
-            <p>Name: {name}</p>
 
-            <input
-                type="text"
-                placeholder="Enter your name"
-                value={inputValue}
-                onChange={(event) => setInputValue(event.target.value)}
-            />
+            <p>Name: {profile.name}</p>
+            <p>Age: {profile.age}</p>
+            <p>Weight: {profile.weight}</p>
+            <p>Height: {profile.height}</p>
 
-            <button type="button" onClick={handleSaveName}>
-                Save name
+            <div>
+                <label>
+                Name
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    value={formData.name}
+                    onChange={handleChange}
+                />
+                </label>
+            </div>
+
+            <div>
+                <label>
+                Age
+                <input
+                    type="number"
+                    name="age"
+                    placeholder="Enter your age"
+                    value={formData.age}
+                    onChange={handleChange}
+                />
+                </label>
+            </div>
+
+            <div>
+                <label>
+                Weight
+                <input
+                    type="number"
+                    name="weight"
+                    placeholder="Enter your weight"
+                    value={formData.weight}
+                    onChange={handleChange}
+                />
+                </label>
+            </div>
+
+            <div>
+                <label>
+                Height
+                <input
+                    type="number"
+                    name="height"
+                    placeholder="Enter your height"
+                    value={formData.height}
+                    onChange={handleChange}
+                />
+                </label>
+            </div>
+
+            <button type="button" onClick={handleSaveProfile}>
+                Save profile
             </button>
         </div>
     );
 }
 
 export default ProfilePage;
+
 
