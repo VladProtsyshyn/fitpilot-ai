@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import './CalculatorPage.css';
 
 function CalculatorPage() {
     const profile = useSelector((state) => state.profile);
@@ -24,13 +25,16 @@ function CalculatorPage() {
     }
 
     return (
-        <div>
+        <div className="calculator-page">
             <h1>Calculator Page</h1>
-            <p>Weight: {profile.weight}</p>
-            <p>Height: {profile.height}</p>
-            <p>Age: {profile.age}</p>
-            <p>BMI: {bmi}</p>
-            <p>Status: {bmiStatus}</p>
+
+            <div className="calculator-card">
+                <p>Weight: {profile.weight}</p>
+                <p>Height: {profile.height}</p>
+                <p>Age: {profile.age}</p>
+                <p>BMI: {bmi}</p>
+                <p>Status: {bmiStatus}</p>
+            </div>
         </div>
     );
 }
