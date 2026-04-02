@@ -23,6 +23,9 @@ function Navigation() {
                 <li>
                     <Link to="/meals">Meals</Link>
                 </li>
+                <li>
+                    <Link to="/analyzer">Analyzer</Link>
+                </li>
             </ul>
         </nav>
     );

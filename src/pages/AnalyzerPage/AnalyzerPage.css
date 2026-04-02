@@ -1,0 +1,36 @@
+.analyzer-page {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.analyzer-card {
+    padding: 16px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    max-width: 420px;
+    }
+
+.analyzer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 420px;
+}
+
+.analyzer-actions button {
+    width: fit-content;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.analyzer-actions button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
