@@ -19,6 +19,11 @@ function MealPlannerPage() {
         setMealName('');
     };
 
+    const handleDeleteMeal = (mealToDelete) => {
+        setMeals((prevMeals) => prevMeals.filter((meal) => meal !== mealToDelete));
+    };
+
+
     return (
         <div className="meal-page">
             <h1>Meal Planner Page</h1>
@@ -44,7 +49,12 @@ function MealPlannerPage() {
             <div className="meal-list">
                 <ul>
                     {meals.map((meal) => (
-                    <li key={meal}>{meal}</li>
+                        <li key={meal}>
+                            {meal}
+                            <button type="button" onClick={() => handleDeleteMeal(meal)}>
+                                Delete
+                            </button>
+                        </li>
                     ))}
                 </ul>
             </div>
@@ -54,4 +64,3 @@ function MealPlannerPage() {
 }
 
 export default MealPlannerPage;
-
