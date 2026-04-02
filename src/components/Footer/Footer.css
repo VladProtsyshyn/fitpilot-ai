@@ -1,20 +1,24 @@
 footer {
-    margin-top: 32px;
-    padding: 20px 24px;
-    background-color: #f3f4f6;
-    border-top: 1px solid #d1d5db;
+    margin-top: 48px;
+    padding: 28px 24px;
+    background-color: rgba(255, 250, 242, 0.9);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-soft);
 }
 
 footer p {
-    margin: 4px 0;
+    margin: 6px 0;
 }
 
 footer a {
-    color: #2563eb;
+    color: var(--color-primary);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
+    transition:
+        color var(--transition-base),
+        opacity var(--transition-base);
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: var(--color-accent);
 }

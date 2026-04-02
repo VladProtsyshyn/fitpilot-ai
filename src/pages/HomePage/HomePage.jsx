@@ -4,20 +4,22 @@ import './HomePage.css';
 function HomePage() {
     return (
         <div className="home-page">
-            <h1>FitPilot AI</h1>
-            <p>Your fitness and nutrition companion.</p>
+            <div className="home-hero">
+                <h1>FitPilot AI</h1>
+                <p>Your fitness and nutrition companion.</p>
 
-            <div className="home-welcome">
+                <div className="home-welcome">
                 <h2>Welcome to your personal fitness workspace</h2>
                 <p>
                     Start with your profile, keep your meals and calories in one place,
                     and use the analyzer to turn food photos into daily nutrition data.
                 </p>
-            </div>
+                </div>
 
-            <div className="home-actions">
-                <Link to="/profile">Set up profile</Link>
-                <Link to="/dashboard">Open dashboard</Link>
+                <div className="home-actions">
+                    <Link to="/profile">Set up profile</Link>
+                    <Link to="/dashboard">Open dashboard</Link>
+                </div>
             </div>
             <p>
                 Track your profile, monitor your BMI, and manage your workout timer in

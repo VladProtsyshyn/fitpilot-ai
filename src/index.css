@@ -1,9 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --color-background: #f6f1e8;
+  --color-surface: #fffaf2;
+  --color-surface-strong: #ffffff;
+  --color-text: #2f2a24;
+  --color-text-soft: #6f675d;
+  --color-primary: #6f7b52;
+  --color-primary-hover: #5d6845;
+  --color-accent: #d78c5b;
+  --color-accent-soft: #f3d7c4;
+  --color-border: #e7dccd;
+
+  --shadow-soft: 0 10px 30px rgba(91, 74, 53, 0.08);
+  --shadow-medium: 0 18px 40px rgba(91, 74, 53, 0.14);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --transition-base: 180ms ease;
+}
+
 * {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+html {
+  scroll-behavior: smooth;
 }
 
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f8f3eb 0%, #f2eadf 100%);
+  color: var(--color-text);
+  font-family: 'Manrope', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+h1 {
+  font-family: 'DM Serif Display', serif;
+  letter-spacing: 0.02em;
+}

@@ -1,23 +1,38 @@
 nav {
-    padding: 16px 24px;
-    background-color: #f3f4f6;
-    border-bottom: 1px solid #d1d5db;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 18px 24px;
+    background-color: rgba(255, 250, 242, 0.82);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(14px);
 }
 
 ul {
     display: flex;
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 a {
-    color: #111827;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 999px;
+    color: var(--color-text);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
+    transition:
+        background-color var(--transition-base),
+        color var(--transition-base),
+        transform var(--transition-base);
 }
 
 a:hover {
-    color: #2563eb;
+    background-color: var(--color-accent-soft);
+    color: var(--color-primary);
+    transform: translateY(-1px);
 }
