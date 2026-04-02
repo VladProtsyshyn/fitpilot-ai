@@ -20,6 +20,14 @@ function MealPlannerPage() {
         }
     }, []);
 
+    useEffect(() => {
+        const timerId = setTimeout(() => {
+            setIsModalOpen(true);
+        }, 1800);
+
+        return () => clearTimeout(timerId);
+    }, []);
+
     const handleAddMeal = () => {
         if (!mealName.trim()) {
             return;
@@ -52,6 +60,10 @@ function MealPlannerPage() {
         saveMealsToStorage([]);
     };
 
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <div className="meal-page">
             <h1>Meal Planner Page</h1>
@@ -68,9 +80,6 @@ function MealPlannerPage() {
 
                 <button type="button" onClick={handleAddMeal}>
                     Add meal
-                </button>
-                <button type="button" onClick={() => setIsModalOpen(true)}>
-                    Open modal
                 </button>
                 <button type="button" onClick={handleClearMeals}>
                     Clear all meals
@@ -93,7 +102,7 @@ function MealPlannerPage() {
                     </ul>
                 )}
             </div>
-            {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
+            {isModalOpen && <Modal onClose={handleCloseModal} />}
         </div>
     );
 }

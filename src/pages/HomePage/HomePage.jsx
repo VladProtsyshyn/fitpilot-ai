@@ -7,6 +7,14 @@ function HomePage() {
             <h1>FitPilot AI</h1>
             <p>Your fitness and nutrition companion.</p>
 
+            <div className="home-welcome">
+                <h2>Welcome to your personal fitness workspace</h2>
+                <p>
+                    Start with your profile, keep your meals and calories in one place,
+                    and use the analyzer to turn food photos into daily nutrition data.
+                </p>
+            </div>
+
             <div className="home-actions">
                 <Link to="/profile">Set up profile</Link>
                 <Link to="/dashboard">Open dashboard</Link>

@@ -19,6 +19,20 @@
     max-width: 420px;
 }
 
+.analyzer-actions label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 600;
+}
+
+.analyzer-actions input[type='date'],
+.analyzer-actions input[type='time'] {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
 .analyzer-actions button {
     width: fit-content;
     padding: 10px 14px;
@@ -33,4 +47,23 @@
 .analyzer-actions button:disabled {
     background-color: #9ca3af;
     cursor: not-allowed;
+}
+
+.analyzer-preview {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    object-fit: cover;
+}
+
+.analyzer-card button {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
 }

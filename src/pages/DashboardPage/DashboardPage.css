@@ -4,10 +4,133 @@
     gap: 16px;
 }
 
+.dashboard-filter label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 600;
+    max-width: 220px;
+}
+
+.dashboard-filter input {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
 .dashboard-card {
     padding: 16px;
     background-color: #f9fafb;
     border: 1px solid #e5e7eb;
     border-radius: 12px;
     max-width: 360px;
+}
+
+.dashboard-summary {
+    display: grid;
+    gap: 16px;
+    max-width: 760px;
+}
+
+.dashboard-summary-card {
+    padding: 20px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+}
+
+.summary-label {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+.summary-value {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.summary-subtitle {
+    margin: 8px 0 0;
+    color: #4b5563;
+}
+
+.macro-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+    font-weight: 600;
+}
+
+.macro-bar {
+    width: 100%;
+    height: 8px;
+    margin-top: 6px;
+    background-color: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.macro-fill {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.macro-fill.protein {
+    background-color: #ef4444;
+}
+
+.macro-fill.fat {
+    background-color: #f59e0b;
+}
+
+.macro-fill.carbs {
+    background-color: #2563eb;
+}
+
+.dashboard-history {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 760px;
+}
+
+.dashboard-history h2 {
+    margin: 8px 0 0;
+}
+
+.dashboard-history-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+}
+
+.history-title {
+    margin: 0 0 6px;
+    font-weight: 700;
+}
+
+.history-calories {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.history-time {
+    margin: 6px 0 0;
+    color: #6b7280;
+}
+
+.history-macros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-content: center;
+    font-weight: 600;
+    color: #4b5563;
 }

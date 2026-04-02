@@ -5,6 +5,23 @@
     padding-top: 24px;
 }
 
+.home-welcome {
+    max-width: 720px;
+    padding: 20px;
+    background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
+    border: 1px solid #bfdbfe;
+    border-radius: 16px;
+}
+
+.home-welcome h2 {
+    margin: 0 0 10px;
+}
+
+.home-welcome p {
+    margin: 0;
+    color: #374151;
+}
+
 .home-actions {
     display: flex;
     gap: 12px;
