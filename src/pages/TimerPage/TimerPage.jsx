@@ -5,6 +5,9 @@ function TimerPage() {
     const [seconds, setSeconds] = useState(60);
     const [isRunning, setIsRunning] = useState(false);
 
+    const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
+    const remainingSeconds = String(seconds % 60).padStart(2, '0');
+
     useEffect(() => {
         if (!isRunning) {
             return;
@@ -29,7 +32,8 @@ function TimerPage() {
             <h1>Timer Page</h1>
 
             <div className="timer-card">
-                <p>Seconds: {seconds}</p>
+                <p>Time: {minutes}:{remainingSeconds}</p>
+                <p>Status: {isRunning ? 'Running' : 'Paused'}</p>
             </div>
 
             <div className="timer-actions">
@@ -60,4 +64,3 @@ function TimerPage() {
 }
 
 export default TimerPage;
-
