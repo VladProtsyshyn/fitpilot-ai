@@ -47,10 +47,16 @@ function MealPlannerPage() {
         });
     };
 
+    const handleClearMeals = () => {
+        setMeals([]);
+        saveMealsToStorage([]);
+    };
+
     return (
         <div className="meal-page">
             <h1>Meal Planner Page</h1>
             <p>Manage your meals here.</p>
+            <p>Total meals: {meals.length}</p>
 
             <div className="meal-form">
                 <input
@@ -66,20 +72,26 @@ function MealPlannerPage() {
                 <button type="button" onClick={() => setIsModalOpen(true)}>
                     Open modal
                 </button>
-
+                <button type="button" onClick={handleClearMeals}>
+                    Clear all meals
+                </button>
             </div>
 
             <div className="meal-list">
-                <ul>
-                    {meals.map((meal) => (
-                        <li key={meal.id}>
-                            {meal.name}
-                            <button type="button" onClick={() => handleDeleteMeal(meal.id)}>
-                                Delete
-                            </button>
-                        </li>
-                    ))}
-                </ul>
+                {meals.length === 0 ? (
+                    <p>No meals added yet.</p>
+                ) : (
+                    <ul>
+                        {meals.map((meal) => (
+                            <li key={meal.id}>
+                                {meal.name}
+                                <button type="button" onClick={() => handleDeleteMeal(meal.id)}>
+                                    Delete
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </div>
             {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
         </div>
