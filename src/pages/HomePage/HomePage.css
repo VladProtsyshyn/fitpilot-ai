@@ -9,3 +9,16 @@
     display: flex;
     gap: 12px;
 }
+
+.home-actions a {
+    padding: 10px 14px;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.home-actions a:hover {
+    background-color: #1d4ed8;
+}

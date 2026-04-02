@@ -11,6 +11,10 @@ function HomePage() {
                 <Link to="/profile">Set up profile</Link>
                 <Link to="/dashboard">Open dashboard</Link>
             </div>
+            <p>
+                Track your profile, monitor your BMI, and manage your workout timer in
+                one place.
+            </p>
         </div>
     );
 }
