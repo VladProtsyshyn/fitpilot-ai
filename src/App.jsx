@@ -6,6 +6,7 @@ import DashboardPage from './pages/DashboardPage/DashboardPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import CalculatorPage from './pages/CalculatorPage/CalculatorPage';
 import TimerPage from './pages/TimerPage/TimerPage';
+import MealPlannerPage from './pages/MealPlannerPage/MealPlannerPage';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/timer" element={<TimerPage />} />
+          <Route path="/meals" element={<MealPlannerPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>

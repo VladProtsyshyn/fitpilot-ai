@@ -20,6 +20,9 @@ function Navigation() {
                 <li>
                     <Link to="/timer">Timer</Link>
                 </li>
+                <li>
+                    <Link to="/meals">Meals</Link>
+                </li>
             </ul>
         </nav>
     );
