@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Modal from '../../components/Modal/Modal';
 import './MealPlannerPage.css';
 
 function MealPlannerPage() {
@@ -8,6 +9,7 @@ function MealPlannerPage() {
         'Rice with vegetables',
     ]);
     const [mealName, setMealName] = useState('');
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleAddMeal = () => {
         if (!mealName.trim()) {
@@ -33,6 +35,10 @@ function MealPlannerPage() {
                 <button type="button" onClick={handleAddMeal}>
                     Add meal
                 </button>
+                <button type="button" onClick={() => setIsModalOpen(true)}>
+                    Open modal
+                </button>
+
             </div>
 
             <div className="meal-list">
@@ -42,6 +48,7 @@ function MealPlannerPage() {
                     ))}
                 </ul>
             </div>
+            {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
         </div>
     );
 }
