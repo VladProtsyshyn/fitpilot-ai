@@ -45,6 +45,7 @@ function ProfilePage() {
     return (
         <div className="profile-page">
             <h1>Profile Page</h1>
+            <p>Build your personal nutrition and fitness profile to unlock better daily insights.</p>
 
             <div className="profile-summary">
                 <p>Name: {profile.name}</p>
