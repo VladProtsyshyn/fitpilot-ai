@@ -31,6 +31,24 @@ function HomePage() {
                     <p>Create and manage your daily meals in one place.</p>
                 </div>
             </div>
+            <div className="home-resources">
+                <h2>Learning resources</h2>
+                <p>Useful video resources for fitness, nutrition, and healthy habits.</p>
+                <a
+                    href="https://www.youtube.com/watch?v=UItWltVZZmE"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    Beginner full body workout
+                </a>
+                <a
+                    href="https://www.youtube.com/watch?v=2pLT-olgUJs"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    Nutrition basics for beginners
+                </a>
+            </div>
         </div>
     );
 }

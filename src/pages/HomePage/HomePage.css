@@ -40,3 +40,28 @@
     margin-top: 0;
     margin-bottom: 8px;
 }
+
+.home-resources {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 720px;
+    padding: 16px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.home-resources h2 {
+    margin: 0;
+}
+
+.home-resources a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.home-resources a:hover {
+    text-decoration: underline;
+}
