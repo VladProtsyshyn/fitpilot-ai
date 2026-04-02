@@ -7,6 +7,7 @@ const initialState = {
     height: '',
     goal: '',
     activityLevel: '',
+    sex: '',
 };
 
 const profileSlice = createSlice({
@@ -20,6 +21,7 @@ const profileSlice = createSlice({
         state.height = action.payload.height;
         state.goal = action.payload.goal;
         state.activityLevel = action.payload.activityLevel;
+        state.sex = action.payload.sex;
         },
     },
 });

@@ -16,6 +16,7 @@ function ProfilePage() {
         height: '',
         goal: '',
         activityLevel: '',
+        sex: '',
     });
 
     useEffect(() => {
@@ -52,6 +53,7 @@ function ProfilePage() {
                 <p>Height: {profile.height}</p>
                 <p>Goal: {profile.goal}</p>
                 <p>Activity level: {profile.activityLevel}</p>
+                <p>Sex: {profile.sex}</p>
             </div>
 
             <div className="profile-form">
@@ -122,6 +124,18 @@ function ProfilePage() {
                         <option value="high">High</option>
                     </select>
                 </label>
+                <label>
+                    Sex
+                    <select
+                        name="sex"
+                        value={formData.sex}
+                        onChange={handleChange}
+                    >
+                        <option value="">Select sex</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </label>
 
                 <button type="button" onClick={handleSaveProfile}>
                     Save profile
@@ -133,5 +147,3 @@ function ProfilePage() {
 }
 
 export default ProfilePage;
-
-

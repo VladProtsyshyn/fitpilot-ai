@@ -23,7 +23,11 @@ function CalculatorPage() {
         bmi = (weight / (height * height)).toFixed(1);
     }
     if (weight > 0 && height > 0 && age > 0) {
-        bmr = Math.round(10 * weight + 6.25 * (height * 100) - 5 * age + 5);
+        if (profile.sex === 'female') {
+            bmr = Math.round(10 * weight + 6.25 * (height * 100) - 5 * age - 161);
+        } else {
+            bmr = Math.round(10 * weight + 6.25 * (height * 100) - 5 * age + 5);
+        }
     }
     if (profile.activityLevel === 'medium') {
         activityMultiplier = 1.55;
@@ -60,6 +64,7 @@ function CalculatorPage() {
                 <p>Height: {profile.height}</p>
                 <p>Age: {profile.age}</p>
                 <p>Activity level: {profile.activityLevel}</p>
+                <p>Sex: {profile.sex}</p>
                 <p>BMI: {bmi}</p>
                 <p>Status: {bmiStatus}</p>
                 <p>BMR: {bmr}</p>
@@ -71,4 +76,3 @@ function CalculatorPage() {
 }
 
 export default CalculatorPage;
-
