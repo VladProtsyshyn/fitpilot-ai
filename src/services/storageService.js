@@ -7,3 +7,13 @@ export function getProfileFromStorage() {
 
     return profile ? JSON.parse(profile) : null;
 }
+
+export function saveMealsToStorage(meals) {
+    localStorage.setItem('meals', JSON.stringify(meals));
+}
+
+export function getMealsFromStorage() {
+    const meals = localStorage.getItem('meals');
+
+    return meals ? JSON.parse(meals) : null;
+}

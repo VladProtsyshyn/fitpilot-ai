@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getMealsFromStorage, saveMealsToStorage } from '../../services/storageService';
 import Modal from '../../components/Modal/Modal';
 import './MealPlannerPage.css';
 
@@ -11,25 +12,40 @@ function MealPlannerPage() {
     const [mealName, setMealName] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    useEffect(() => {
+        const savedMeals = getMealsFromStorage();
+
+        if (savedMeals) {
+            setMeals(savedMeals);
+        }
+    }, []);
+
     const handleAddMeal = () => {
         if (!mealName.trim()) {
             return;
         }
 
-        setMeals((prevMeals) => [
-            ...prevMeals,
-            {
-                id: Date.now(),
-                name: mealName.trim(),
-            },
-        ]);
+        const newMeal = {
+            id: Date.now(),
+            name: mealName.trim(),
+        };
+
+        setMeals((prevMeals) => {
+            const updatedMeals = [...prevMeals, newMeal];
+            saveMealsToStorage(updatedMeals);
+            return updatedMeals;
+        });
+
         setMealName('');
     };
 
     const handleDeleteMeal = (mealId) => {
-        setMeals((prevMeals) => prevMeals.filter((meal) => meal.id !== mealId));
+        setMeals((prevMeals) => {
+            const updatedMeals = prevMeals.filter((meal) => meal.id !== mealId);
+            saveMealsToStorage(updatedMeals);
+            return updatedMeals;
+        });
     };
-
 
     return (
         <div className="meal-page">
