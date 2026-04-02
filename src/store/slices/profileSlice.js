@@ -6,6 +6,7 @@ const initialState = {
     weight: '',
     height: '',
     goal: '',
+    activityLevel: '',
 };
 
 const profileSlice = createSlice({
@@ -18,11 +19,10 @@ const profileSlice = createSlice({
         state.weight = action.payload.weight;
         state.height = action.payload.height;
         state.goal = action.payload.goal;
+        state.activityLevel = action.payload.activityLevel;
         },
     },
 });
 
 export const { setProfile } = profileSlice.actions;
 export default profileSlice.reducer;
-
-

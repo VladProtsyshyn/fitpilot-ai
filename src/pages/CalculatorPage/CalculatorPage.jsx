@@ -13,6 +13,8 @@ function CalculatorPage() {
 
     let dailyCalories = 0;
 
+    let activityMultiplier = 1.2;
+
     let bmi = 0;
     let bmiStatus = '';
     let calorieRecommendation = 'Complete your profile to get a recommendation.';
@@ -23,8 +25,13 @@ function CalculatorPage() {
     if (weight > 0 && height > 0 && age > 0) {
         bmr = Math.round(10 * weight + 6.25 * (height * 100) - 5 * age + 5);
     }
+    if (profile.activityLevel === 'medium') {
+        activityMultiplier = 1.55;
+    } else if (profile.activityLevel === 'high') {
+        activityMultiplier = 1.75;
+    }
     if (bmr > 0) {
-        dailyCalories = Math.round(bmr * 1.2);
+        dailyCalories = Math.round(bmr * activityMultiplier);
     }
     if (profile.goal === 'lose weight' && dailyCalories > 0) {
         calorieRecommendation = `Recommended intake: ${dailyCalories - 300} kcal`;
@@ -52,6 +59,7 @@ function CalculatorPage() {
                 <p>Weight: {profile.weight}</p>
                 <p>Height: {profile.height}</p>
                 <p>Age: {profile.age}</p>
+                <p>Activity level: {profile.activityLevel}</p>
                 <p>BMI: {bmi}</p>
                 <p>Status: {bmiStatus}</p>
                 <p>BMR: {bmr}</p>

@@ -15,6 +15,7 @@ function ProfilePage() {
         weight: '',
         height: '',
         goal: '',
+        activityLevel: '',
     });
 
     useEffect(() => {
@@ -50,6 +51,7 @@ function ProfilePage() {
                 <p>Weight: {profile.weight}</p>
                 <p>Height: {profile.height}</p>
                 <p>Goal: {profile.goal}</p>
+                <p>Activity level: {profile.activityLevel}</p>
             </div>
 
             <div className="profile-form">
@@ -104,6 +106,20 @@ function ProfilePage() {
                         <option value="lose weight">Lose weight</option>
                         <option value="maintain">Maintain</option>
                         <option value="gain muscle">Gain muscle</option>
+                    </select>
+                </label>
+
+                <label>
+                    Activity level
+                    <select
+                        name="activityLevel"
+                        value={formData.activityLevel}
+                        onChange={handleChange}
+                    >
+                        <option value="">Select activity level</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
                     </select>
                 </label>
 
