@@ -9,10 +9,10 @@ function Navigation() {
                     <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/dashboard">Dashboard</Link>
+                    <Link to="/profile">Profile</Link>
                 </li>
                 <li>
-                    <Link to="/profile">Profile</Link>
+                    <Link to="/dashboard">Dashboard</Link>
                 </li>
                 <li>
                     <Link to="/calculator">Calculator</Link>
