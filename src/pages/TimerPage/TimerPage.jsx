@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './TimerPage.css';
 
 function TimerPage() {
     const [seconds, setSeconds] = useState(60);
@@ -24,30 +25,36 @@ function TimerPage() {
     }, [isRunning]);
 
     return (
-        <div>
+        <div className="timer-page">
             <h1>Timer Page</h1>
-            <p>Seconds: {seconds}</p>
 
-            <button type="button" onClick={() => setSeconds(seconds + 10)}>
-                Add 10 seconds
-            </button>
+            <div className="timer-card">
+                <p>Seconds: {seconds}</p>
+            </div>
 
-            <button
-                type="button"
-                onClick={() => {
+            <div className="timer-actions">
+                <button type="button" onClick={() => setSeconds(seconds + 10)}>
+                    Add 10 seconds
+                </button>
+
+                <button
+                    type="button"
+                    onClick={() => {
                     setSeconds(60);
                     setIsRunning(false);
-                }}>
-                Reset
-            </button>
+                    }}
+                >
+                    Reset
+                </button>
 
-            <button type="button" onClick={() => setIsRunning(true)}>
-                Start timer
-            </button>
+                <button type="button" onClick={() => setIsRunning(true)}>
+                    Start timer
+                </button>
 
-            <button type="button" onClick={() => setIsRunning(false)}>
-                Pause
-            </button>
+                <button type="button" onClick={() => setIsRunning(false)}>
+                    Pause
+                </button>
+            </div>
         </div>
     );
 }

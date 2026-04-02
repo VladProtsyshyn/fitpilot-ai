@@ -1,0 +1,29 @@
+.timer-page {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.timer-card {
+    padding: 16px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    max-width: 360px;
+}
+
+.timer-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.timer-actions button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
