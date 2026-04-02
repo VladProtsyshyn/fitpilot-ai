@@ -22,3 +22,21 @@
 .home-actions a:hover {
     background-color: #1d4ed8;
 }
+
+.home-features {
+    display: grid;
+    gap: 16px;
+    max-width: 720px;
+}
+
+.home-features div {
+    padding: 16px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.home-features h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
