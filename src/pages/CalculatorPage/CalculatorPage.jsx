@@ -58,6 +58,7 @@ function CalculatorPage() {
     return (
         <div className="calculator-page">
             <h1>Calculator Page</h1>
+            <p>Review your BMI, estimated calorie needs, and a simple recommendation based on your goal.</p>
 
             <div className="calculator-card">
                 <p>Weight: {profile.weight}</p>
@@ -65,10 +66,12 @@ function CalculatorPage() {
                 <p>Age: {profile.age}</p>
                 <p>Activity level: {profile.activityLevel}</p>
                 <p>Sex: {profile.sex}</p>
-                <p>BMI: {bmi}</p>
-                <p>Status: {bmiStatus}</p>
-                <p>BMR: {bmr}</p>
-                <p>Daily calories: {dailyCalories}</p>
+                <div className="calculator-highlights">
+                    <p>BMI: {bmi}</p>
+                    <p>Status: {bmiStatus}</p>
+                    <p>BMR: {bmr}</p>
+                    <p>Daily calories: {dailyCalories}</p>
+                </div>
                 <p>{calorieRecommendation}</p>
             </div>
         </div>
