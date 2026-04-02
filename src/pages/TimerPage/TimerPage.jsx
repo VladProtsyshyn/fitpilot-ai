@@ -5,6 +5,11 @@ function TimerPage() {
     const [seconds, setSeconds] = useState(60);
     const [isRunning, setIsRunning] = useState(false);
 
+    const setPreset = (value) => {
+        setSeconds(value);
+        setIsRunning(false);
+    };
+
     const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
     const remainingSeconds = String(seconds % 60).padStart(2, '0');
 
@@ -34,6 +39,21 @@ function TimerPage() {
             <div className="timer-card">
                 <p>Time: {minutes}:{remainingSeconds}</p>
                 <p>Status: {isRunning ? 'Running' : 'Paused'}</p>
+                {seconds === 0 && <p>Timer finished!</p>}
+            </div>
+
+            <div className="timer-actions">
+                <button type="button" onClick={() => setPreset(30)}>
+                    30 sec
+                </button>
+
+                <button type="button" onClick={() => setPreset(60)}>
+                    60 sec
+                </button>
+
+                <button type="button" onClick={() => setPreset(90)}>
+                    90 sec
+                </button>
             </div>
 
             <div className="timer-actions">
