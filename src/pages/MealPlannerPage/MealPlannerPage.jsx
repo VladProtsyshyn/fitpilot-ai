@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getMealsFromStorage, saveMealsToStorage } from '../../services/storageService';
 import Modal from '../../components/Modal/Modal';
+import TrashIcon from '../../components/icons/TrashIcon';
 import './MealPlannerPage.css';
 
 function MealPlannerPage() {
@@ -67,7 +68,7 @@ function MealPlannerPage() {
     return (
         <div className="meal-page">
             <h1>Meal Planner Page</h1>
-            <p>Manage your meals here.</p>
+            <p>Build a simple daily meal plan, keep track of your entries, and manage everything in one place.</p>
             <p>Total meals: {meals.length}</p>
 
             <div className="meal-form">
@@ -93,9 +94,9 @@ function MealPlannerPage() {
                     <ul>
                         {meals.map((meal) => (
                             <li key={meal.id}>
-                                {meal.name}
+                                <span className="meal-name">{meal.name}</span>
                                 <button type="button" onClick={() => handleDeleteMeal(meal.id)}>
-                                    Delete
+                                    <TrashIcon />  
                                 </button>
                             </li>
                         ))}
