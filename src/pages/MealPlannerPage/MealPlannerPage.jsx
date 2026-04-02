@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './MealPlannerPage.css';
 
 function MealPlannerPage() {
     const [meals, setMeals] = useState([
@@ -17,26 +18,30 @@ function MealPlannerPage() {
     };
 
     return (
-        <div>
+        <div className="meal-page">
             <h1>Meal Planner Page</h1>
             <p>Manage your meals here.</p>
 
-            <input
-                type="text"
-                placeholder="Enter meal name"
-                value={mealName}
-                onChange={(event) => setMealName(event.target.value)}
-            />
+            <div className="meal-form">
+                <input
+                    type="text"
+                    placeholder="Enter meal name"
+                    value={mealName}
+                    onChange={(event) => setMealName(event.target.value)}
+                />
 
-            <button type="button" onClick={handleAddMeal}>
-                Add meal
-            </button>
+                <button type="button" onClick={handleAddMeal}>
+                    Add meal
+                </button>
+            </div>
 
-            <ul>
-                {meals.map((meal) => (
-                <li key={meal}>{meal}</li>
-                ))}
-            </ul>
+            <div className="meal-list">
+                <ul>
+                    {meals.map((meal) => (
+                    <li key={meal}>{meal}</li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 }
