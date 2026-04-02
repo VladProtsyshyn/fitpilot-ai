@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProfile } from '../../store/slices/profileSlice';
+import { getProfileFromStorage, saveProfileToStorage } from '../../services/storageService';
+
 import './ProfilePage.css';
 
 function ProfilePage() {
@@ -15,6 +17,15 @@ function ProfilePage() {
         goal: '',
     });
 
+    useEffect(() => {
+        const savedProfile = getProfileFromStorage();
+
+        if (savedProfile) {
+            dispatch(setProfile(savedProfile));
+            setFormData(savedProfile);
+        }
+    }, [dispatch]);
+
     const handleChange = (event) => {
         const { name, value } = event.target;
 
@@ -26,6 +37,7 @@ function ProfilePage() {
 
     const handleSaveProfile = () => {
         dispatch(setProfile(formData));
+        saveProfileToStorage(formData);
     };
 
     return (
