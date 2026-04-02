@@ -4,23 +4,30 @@ import './MealPlannerPage.css';
 
 function MealPlannerPage() {
     const [meals, setMeals] = useState([
-        'Oatmeal',
-        'Chicken salad',
-        'Rice with vegetables',
+        { id: 1, name: 'Oatmeal' },
+        { id: 2, name: 'Chicken salad' },
+        { id: 3, name: 'Rice with vegetables' },
     ]);
     const [mealName, setMealName] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleAddMeal = () => {
         if (!mealName.trim()) {
-        return;
-    }
-        setMeals((prevMeals) => [...prevMeals, mealName]);
+            return;
+        }
+
+        setMeals((prevMeals) => [
+            ...prevMeals,
+            {
+                id: Date.now(),
+                name: mealName.trim(),
+            },
+        ]);
         setMealName('');
     };
 
-    const handleDeleteMeal = (mealToDelete) => {
-        setMeals((prevMeals) => prevMeals.filter((meal) => meal !== mealToDelete));
+    const handleDeleteMeal = (mealId) => {
+        setMeals((prevMeals) => prevMeals.filter((meal) => meal.id !== mealId));
     };
 
 
@@ -49,9 +56,9 @@ function MealPlannerPage() {
             <div className="meal-list">
                 <ul>
                     {meals.map((meal) => (
-                        <li key={meal}>
-                            {meal}
-                            <button type="button" onClick={() => handleDeleteMeal(meal)}>
+                        <li key={meal.id}>
+                            {meal.name}
+                            <button type="button" onClick={() => handleDeleteMeal(meal.id)}>
                                 Delete
                             </button>
                         </li>
