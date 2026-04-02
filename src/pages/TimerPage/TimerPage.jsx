@@ -35,11 +35,16 @@ function TimerPage() {
     return (
         <div className="timer-page">
             <h1>Timer Page</h1>
+            <p>Use quick presets, stay focused, and track each countdown with a simple workout timer.</p>
 
             <div className="timer-card">
-                <p>Time: {minutes}:{remainingSeconds}</p>
-                <p>Status: {isRunning ? 'Running' : 'Paused'}</p>
-                {seconds === 0 && <p>Timer finished!</p>}
+                <p className="timer-value">
+                    {minutes}:{remainingSeconds}
+                </p>
+                <p className="timer-status">
+                    Status: {isRunning ? 'Running' : 'Paused'}
+                </p>
+                {seconds === 0 && <p className="timer-finished">Timer finished!</p>}
             </div>
 
             <div className="timer-actions">

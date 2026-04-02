@@ -1,35 +1,82 @@
 .timer-page {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.timer-card {
-    padding: 16px;
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    max-width: 360px;
-}
-
-.timer-actions {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.timer-actions button {
-    padding: 10px 14px;
-    border: none;
-    border-radius: 8px;
-    background-color: #2563eb;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
+    display: grid;
+    gap: 22px;
 }
 
 .timer-card p {
     margin: 0;
-    font-size: 32px;
+}
+
+.timer-card {
+    max-width: 520px;
+    padding: 28px 24px;
+    background:
+        linear-gradient(180deg, rgba(255, 250, 242, 0.96), rgba(245, 235, 222, 0.92));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-medium);
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.timer-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.timer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.timer-actions button {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 800;
+    box-shadow: var(--shadow-soft);
+    cursor: pointer;
+    transition:
+        transform var(--transition-base),
+        background-color var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.timer-actions button:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.timer-value {
+    margin: 0;
+    font-size: clamp(2.8rem, 7vw, 4.4rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: 0.06em;
+}
+
+.timer-status {
+    margin-top: 10px;
+    font-size: 1rem;
     font-weight: 700;
+    color: var(--color-text-soft);
+    letter-spacing: normal;
+}
+
+.timer-finished {
+    margin-top: 12px;
+    padding: 10px 14px;
+    display: inline-flex;
+    width: fit-content;
+    background-color: rgba(215, 140, 91, 0.14);
+    border-radius: 999px;
+    color: var(--color-accent);
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: normal;
 }
