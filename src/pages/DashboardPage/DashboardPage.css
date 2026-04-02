@@ -1,73 +1,110 @@
 .dashboard-page {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 22px;
+}
+
+.dashboard-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
 }
 
 .dashboard-filter label {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    font-weight: 600;
-    max-width: 220px;
+    gap: 8px;
+    max-width: 240px;
+    font-weight: 700;
+    color: var(--color-text-soft);
 }
 
 .dashboard-filter input {
-    padding: 10px 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
+    padding: 12px 14px;
+    background-color: rgba(255, 250, 242, 0.92);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
 }
 
 .dashboard-card {
-    padding: 16px;
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    max-width: 360px;
+    padding: 22px;
+    background-color: rgba(255, 250, 242, 0.92);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.dashboard-card p {
+    margin: 0 0 10px;
+    line-height: 1.6;
+}
+
+.dashboard-card p:last-child {
+    margin-bottom: 0;
+}
+
+.dashboard-card:hover,
+.dashboard-history-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.dashboard-card,
+.dashboard-history-card {
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base),
+        border-color var(--transition-base);
 }
 
 .dashboard-summary {
     display: grid;
-    gap: 16px;
-    max-width: 760px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
 }
 
 .dashboard-summary-card {
-    padding: 20px;
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
+    padding: 24px;
+    background:
+        linear-gradient(180deg, rgba(255, 250, 242, 0.96), rgba(245, 235, 222, 0.92));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-medium);
 }
 
 .summary-label {
-    margin: 0 0 8px;
-    font-size: 14px;
-    color: #4b5563;
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+    color: var(--color-text-soft);
+    font-weight: 700;
 }
 
 .summary-value {
     margin: 0;
-    font-size: 40px;
-    font-weight: 700;
+    font-size: clamp(2.5rem, 4vw, 3.3rem);
+    font-weight: 800;
+    color: var(--color-primary);
 }
 
 .summary-subtitle {
-    margin: 8px 0 0;
-    color: #4b5563;
+    margin: 10px 0 0;
+    color: var(--color-text-soft);
+    line-height: 1.6;
 }
 
 .macro-row {
     display: flex;
     justify-content: space-between;
-    margin-top: 14px;
-    font-weight: 600;
+    margin-top: 16px;
+    font-weight: 700;
 }
 
 .macro-bar {
     width: 100%;
-    height: 8px;
-    margin-top: 6px;
-    background-color: #e5e7eb;
+    height: 10px;
+    margin-top: 8px;
+    background-color: rgba(111, 123, 82, 0.14);
     border-radius: 999px;
     overflow: hidden;
 }
@@ -78,22 +115,21 @@
 }
 
 .macro-fill.protein {
-    background-color: #ef4444;
+    background-color: #d78c5b;
 }
 
 .macro-fill.fat {
-    background-color: #f59e0b;
+    background-color: #b6a06f;
 }
 
 .macro-fill.carbs {
-    background-color: #2563eb;
+    background-color: #6f7b52;
 }
 
 .dashboard-history {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    max-width: 760px;
+    gap: 14px;
 }
 
 .dashboard-history h2 {
@@ -103,27 +139,29 @@
 .dashboard-history-card {
     display: flex;
     justify-content: space-between;
-    gap: 16px;
-    padding: 16px;
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
+    gap: 18px;
+    padding: 18px 20px;
+    background-color: rgba(255, 250, 242, 0.92);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
 }
 
 .history-title {
     margin: 0 0 6px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .history-calories {
     margin: 0;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--color-primary);
 }
 
 .history-time {
-    margin: 6px 0 0;
-    color: #6b7280;
+    margin: 8px 0 0;
+    color: var(--color-text-soft);
 }
 
 .history-macros {
@@ -131,6 +169,12 @@
     flex-wrap: wrap;
     gap: 8px;
     align-content: center;
-    font-weight: 600;
-    color: #4b5563;
+    font-weight: 700;
+    color: var(--color-text-soft);
+}
+
+.history-macros span {
+    padding: 6px 10px;
+    background-color: rgba(215, 140, 91, 0.12);
+    border-radius: 999px;
 }

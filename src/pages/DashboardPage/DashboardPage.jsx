@@ -103,25 +103,27 @@ function DashboardPage() {
                 </label>
             </div>
 
-            <div className="dashboard-card">
-                <p>Welcome, {profile.name || 'guest'}!</p>
-                <p>Your goal: {profile.goal || 'not selected'}</p>
-                <p>Weight: {profile.weight || 'not set'} kg</p>
-                <p>Height: {profile.height || 'not set'} cm</p>
-            </div>
+            <div className="dashboard-overview">
+                <div className="dashboard-card">
+                    <p>Welcome, {profile.name || 'guest'}!</p>
+                    <p>Your goal: {profile.goal || 'not selected'}</p>
+                    <p>Weight: {profile.weight || 'not set'} kg</p>
+                    <p>Height: {profile.height || 'not set'} cm</p>
+                </div>
 
-            <div className="dashboard-card">
-                <p>Current BMI: {bmi || 'not calculated'}</p>
-                <p>Status: {bmiStatus || 'not available'}</p>
-            </div>
+                <div className="dashboard-card">
+                    <p>Current BMI: {bmi || 'not calculated'}</p>
+                    <p>Status: {bmiStatus || 'not available'}</p>
+                </div>
 
-            <div className="dashboard-card">
-                <p>Profile completion: {completionPercent}%</p>
-            </div>
+                <div className="dashboard-card">
+                    <p>Profile completion: {completionPercent}%</p>
+                </div>
 
-            <div className="dashboard-card">
-                <p>Tip of the day:</p>
-                <p>{tip}</p>
+                <div className="dashboard-card">
+                    <p>Tip of the day:</p>
+                    <p>{tip}</p>
+                </div>    
             </div>
 
             <div className="dashboard-summary">
