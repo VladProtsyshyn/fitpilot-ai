@@ -1,30 +1,35 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navigation.css';
 
 function Navigation() {
     return (
         <nav>
-            <ul>
+            <div className="nav-brand">
+                <p>FitPilot AI</p>
+                <span>Wellness dashboard</span>
+            </div>
+
+            <ul className="nav-links">
                 <li>
-                    <Link to="/">Home</Link>
+                    <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
-                    <Link to="/profile">Profile</Link>
+                    <NavLink to="/profile">Profile</NavLink>
                 </li>
                 <li>
-                    <Link to="/dashboard">Dashboard</Link>
+                    <NavLink to="/dashboard">Dashboard</NavLink>
                 </li>
                 <li>
-                    <Link to="/calculator">Calculator</Link>
+                    <NavLink to="/calculator">Calculator</NavLink>
                 </li>
                 <li>
-                    <Link to="/timer">Timer</Link>
+                    <NavLink to="/timer">Timer</NavLink>
                 </li>
                 <li>
-                    <Link to="/meals">Meals</Link>
+                    <NavLink to="/meals">Meals</NavLink>
                 </li>
                 <li>
-                    <Link to="/analyzer">Analyzer</Link>
+                    <NavLink to="/analyzer">Analyzer</NavLink>
                 </li>
             </ul>
         </nav>

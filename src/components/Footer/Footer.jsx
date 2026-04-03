@@ -7,7 +7,13 @@ function Footer() {
         <footer>
             <div className="footer-brand">
             <p>FitPilot AI</p>
-            <p>Personal fitness and nutrition workspace.</p>
+            <p>Track meals, progress, and daily balance</p>
+            </div>
+
+            <div className="footer-divider" aria-hidden="true">
+                <span />
+                <span />
+                <span />
             </div>
 
             <div className="footer-links">

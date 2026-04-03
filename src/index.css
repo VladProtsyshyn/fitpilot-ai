@@ -33,10 +33,9 @@ html {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top left, rgba(228, 111, 47, 0.12), transparent 24%),
-    radial-gradient(circle at top right, rgba(88, 112, 63, 0.10), transparent 28%),
-    linear-gradient(180deg, #f2e6d7 0%, #eadcc8 100%);
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #f2e6d7 0%, #eadcc8 100%);
   color: var(--color-text);
   font-family: 'Manrope', sans-serif;
 }
@@ -68,4 +67,42 @@ p {
   font-size: 1.02rem;
   line-height: 1.75;
   font-weight: 500;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  top: 110px;
+  bottom: 40px;
+  width: 220px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.72;
+  background-image: url('/side-ornament.svg');
+  background-repeat: repeat-y;
+  background-size: 220px auto;
+}
+
+body::before {
+  left: 36px;
+}
+
+body::after {
+  right: 36px;
+  transform: scaleX(-1);
+}
+
+nav,
+.layout-shell,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+nav,
+.layout-shell,
+footer {
+  position: relative;
+  z-index: 1;
 }

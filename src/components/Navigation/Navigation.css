@@ -2,15 +2,43 @@ nav {
     position: sticky;
     top: 0;
     z-index: 10;
-    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 28px;
     background-color: rgba(255, 250, 242, 0.82);
     border-bottom: 1px solid var(--color-border);
     backdrop-filter: blur(14px);
 }
 
-nav ul {
+.nav-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.nav-brand p {
+    margin: 0;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.75rem;
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+}
+
+.nav-brand span {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.nav-links {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
     gap: 12px;
     margin: 0;
     padding: 0;
@@ -28,11 +56,18 @@ nav a {
     transition:
         background-color var(--transition-base),
         color var(--transition-base),
-        transform var(--transition-base);
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
 }
 
 nav a:hover {
     background-color: var(--color-accent-soft);
     color: var(--color-primary);
     transform: translateY(-1px);
+}
+
+nav a.active {
+    background-color: rgba(228, 111, 47, 0.14);
+    color: var(--color-accent);
+    box-shadow: var(--shadow-soft);
 }

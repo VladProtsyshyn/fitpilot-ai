@@ -10,7 +10,6 @@ import MealPlannerPage from './pages/MealPlannerPage/MealPlannerPage';
 import AnalyzerPage from './pages/AnalyzerPage/AnalyzerPage';
 import Footer from './components/Footer/Footer';
 
-
 function App() {
   return (
     <BrowserRouter>
