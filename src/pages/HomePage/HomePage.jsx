@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ArrowLeftIcon from '../../components/icons/ArrowLeftIcon';
 import ArrowRightIcon from '../../components/icons/ArrowRightIcon';
@@ -39,8 +39,35 @@ const showcaseItems = [
 
 function HomePage() {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [isSlidingOut, setIsSlidingOut] = useState(false);
+    const slideTimeoutRef = useRef(null);
 
     const visibleItems = showcaseItems.slice(currentSlide * 3, currentSlide * 3 + 3);
+    const totalSlides = Math.ceil(showcaseItems.length / 3);
+
+    useEffect(() => () => {
+        if (slideTimeoutRef.current) {
+            clearTimeout(slideTimeoutRef.current);
+        }
+    }, []);
+
+    const handleSlideChange = (nextSlide) => {
+        if (
+            nextSlide === currentSlide ||
+            nextSlide < 0 ||
+            nextSlide >= totalSlides ||
+            isSlidingOut
+        ) {
+            return;
+        }
+
+        setIsSlidingOut(true);
+
+        slideTimeoutRef.current = setTimeout(() => {
+            setCurrentSlide(nextSlide);
+            setIsSlidingOut(false);
+        }, 260);
+    };
 
     return (
         <div className="home-page">
@@ -67,20 +94,20 @@ function HomePage() {
                 <div className="showcase-controls">
                     <button
                         type="button"
-                        onClick={() => setCurrentSlide((prev) => Math.max(prev - 1, 0))}
-                        disabled={currentSlide === 0}
+                        onClick={() => handleSlideChange(currentSlide - 1)}
+                        disabled={currentSlide === 0 || isSlidingOut}
                     >
                         <ArrowLeftIcon />
                     </button>
                     <button
                         type="button"
-                        onClick={() => setCurrentSlide((prev) => Math.min(prev + 1, 1))}
-                        disabled={currentSlide >= 1}
+                        onClick={() => handleSlideChange(currentSlide + 1)}
+                        disabled={currentSlide >= totalSlides - 1 || isSlidingOut}
                     >
                         <ArrowRightIcon />
                     </button>
                 </div>
-                <div className="home-showcase" key={currentSlide}>
+                <div className={`home-showcase ${isSlidingOut ? 'is-exiting' : 'is-entering'}`}>
                     {visibleItems.map((item) => (
                     <div className="showcase-card" key={item.title}>
                         <img src={item.image} alt={`${item.title} page visual`} />
