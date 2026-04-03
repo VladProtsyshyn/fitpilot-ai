@@ -3,7 +3,7 @@ import './Layout.css';
 
 function Layout({ children }) {
     return (
-        <div>
+        <div className="layout-shell">
             <main>{children}</main>
         </div>
     );
@@ -14,4 +14,3 @@ Layout.propTypes = {
 };
 
 export default Layout;
-

@@ -1,5 +1,12 @@
+.layout-shell {
+    min-height: calc(100vh - 88px);
+    display: flex;
+    flex-direction: column;
+}
+
 main {
     width: min(1120px, calc(100% - 32px));
     margin: 0 auto;
     padding: 40px 0 24px;
+    flex: 1;
 }

@@ -1,18 +1,24 @@
+import MailIcon from '../icons/MailIcon';
+import YouTubeIcon from '../icons/YouTubeIcon';
 import './Footer.css';
 
 function Footer() {
     return (
         <footer>
+            <div className="footer-brand">
             <p>FitPilot AI</p>
-            <p>
-                Email: <a href="mailto:yourname@example.com">yourname@example.com</a>
-            </p>
-            <p>
-                GitHub:{' '}
-                <a href="https://github.com/your-profile" target="_blank" rel="noreferrer">
-                    github.com/your-profile
+            <p>Personal fitness and nutrition workspace.</p>
+            </div>
+
+            <div className="footer-links">
+                <a href="mailto:yourname@example.com" aria-label="Email">
+                    <MailIcon />
                 </a>
-            </p>
+
+                <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">
+                    <YouTubeIcon />
+                </a>
+            </div>
         </footer>
     );
 }

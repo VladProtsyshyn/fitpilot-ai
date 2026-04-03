@@ -1,19 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --color-background: #f6f1e8;
-  --color-surface: #fffaf2;
-  --color-surface-strong: #ffffff;
-  --color-text: #2f2a24;
-  --color-text-soft: #6f675d;
-  --color-primary: #6f7b52;
-  --color-primary-hover: #5d6845;
-  --color-accent: #d78c5b;
-  --color-accent-soft: #f3d7c4;
-  --color-border: #e7dccd;
+  --color-background: #fbf3e6;
+  --color-surface: #fffaf1;
+  --color-surface-strong: #fffdf8;
+  --color-text: #26211c;
+  --color-text-soft: #665d53;
+  --color-primary: #58703f;
+  --color-primary-hover: #44592f;
+  --color-accent: #e46f2f;
+  --color-accent-soft: #f6c7aa;
+  --color-text: #201b17;
+  --color-text-soft: #5c544a;
 
-  --shadow-soft: 0 10px 30px rgba(91, 74, 53, 0.08);
-  --shadow-medium: 0 18px 40px rgba(91, 74, 53, 0.14);
+  --shadow-soft: 0 14px 32px rgba(90, 62, 32, 0.12);
+  --shadow-medium: 0 22px 46px rgba(90, 62, 32, 0.18);
 
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -32,7 +33,10 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #f8f3eb 0%, #f2eadf 100%);
+  background:
+    radial-gradient(circle at top left, rgba(228, 111, 47, 0.12), transparent 24%),
+    radial-gradient(circle at top right, rgba(88, 112, 63, 0.10), transparent 28%),
+    linear-gradient(180deg, #f2e6d7 0%, #eadcc8 100%);
   color: var(--color-text);
   font-family: 'Manrope', sans-serif;
 }
@@ -58,4 +62,10 @@ h3 {
 h1 {
   font-family: 'DM Serif Display', serif;
   letter-spacing: 0.02em;
+}
+
+p {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  font-weight: 500;
 }
