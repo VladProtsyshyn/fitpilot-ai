@@ -7,6 +7,6 @@
 main {
     width: min(1120px, calc(100% - 32px));
     margin: 0 auto;
-    padding: 40px 0 24px;
+    padding: 150px 0 24px;
     flex: 1;
 }

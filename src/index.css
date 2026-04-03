@@ -93,14 +93,6 @@ body::after {
   transform: scaleX(-1);
 }
 
-nav,
-.layout-shell,
-footer {
-  position: relative;
-  z-index: 1;
-}
-
-nav,
 .layout-shell,
 footer {
   position: relative;
