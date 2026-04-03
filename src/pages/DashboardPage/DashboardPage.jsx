@@ -90,7 +90,11 @@ function DashboardPage() {
 
     return (
         <div className="dashboard-page">
-            <h1>Dashboard Page</h1>
+            <div className="page-heading">
+                <img src="/dashboard-card.png" alt="Dashboard page icon" />
+                <h1>Dashboard Page</h1>
+            </div>
+            <p>Track your daily nutrition, review progress, and keep the most important health signals in one place.</p>
 
             <div className="dashboard-filter">
                 <label>
@@ -104,26 +108,49 @@ function DashboardPage() {
             </div>
 
             <div className="dashboard-overview">
-                <div className="dashboard-card">
-                    <p>Welcome, {profile.name || 'guest'}!</p>
-                    <p>Your goal: {profile.goal || 'not selected'}</p>
-                    <p>Weight: {profile.weight || 'not set'} kg</p>
-                    <p>Height: {profile.height || 'not set'} cm</p>
+                <div className="dashboard-card dashboard-card-highlight">
+                    <p className="dashboard-card-label">Profile snapshot</p>
+                    <p className="dashboard-card-value">Welcome, {profile.name || 'guest'}!</p>
+
+                    <div className="dashboard-card-details">
+                        <p>
+                            <span>Goal</span>
+                            <strong>{profile.goal || 'not selected'}</strong>
+                        </p>
+                        <p>
+                            <span>Weight</span>
+                            <strong>{profile.weight ? `${profile.weight} kg` : 'not set'}</strong>
+                        </p>
+                        <p>
+                            <span>Height</span>
+                            <strong>{profile.height ? `${profile.height} cm` : 'not set'}</strong>
+                        </p>
+                    </div>
                 </div>
 
                 <div className="dashboard-card">
-                    <p>Current BMI: {bmi || 'not calculated'}</p>
-                    <p>Status: {bmiStatus || 'not available'}</p>
+                    <p className="dashboard-card-label">Body metrics</p>
+                    <p className="dashboard-card-value">{bmi || 'not calculated'}</p>
+                    <p className="dashboard-card-note">
+                        Status: {bmiStatus || 'not available'}
+                    </p>
                 </div>
 
                 <div className="dashboard-card">
-                    <p>Profile completion: {completionPercent}%</p>
+                    <p className="dashboard-card-label">Profile completion</p>
+                    <p className="dashboard-card-value">{completionPercent}%</p>
+                    <div className="dashboard-progress">
+                        <div
+                            className="dashboard-progress-fill"
+                            style={{ width: `${completionPercent}%` }}
+                        />
+                    </div>
                 </div>
 
-                <div className="dashboard-card">
-                    <p>Tip of the day:</p>
-                    <p>{tip}</p>
-                </div>    
+                <div className="dashboard-card dashboard-card-tip">
+                    <p className="dashboard-card-label">Tip of the day</p>
+                    <p className="dashboard-card-copy">{tip}</p>
+                </div>
             </div>
 
             <div className="dashboard-summary">
