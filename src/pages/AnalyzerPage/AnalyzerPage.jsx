@@ -118,10 +118,18 @@ function AnalyzerPage() {
 
     return (
         <div className="analyzer-page">
-            <h1>AI Food Analyzer</h1>
+            <div className="page-heading">
+                <img src="/analyzer-card.png" alt="Analyzer page icon" />
+                <h1>AI Food Analyzer</h1>
+            </div>
             <p>Upload a food photo, review the mock nutrition result, and save the entry to your dashboard timeline.</p>
 
             <div className="analyzer-actions">
+                <div className="analyzer-actions-heading">
+                    <p>Analyze a meal photo</p>
+                    <span>Upload an image, set the entry time, and generate a quick nutrition summary.</span>
+                </div>
+
                 <input
                     type="file"
                     accept="image/*"
@@ -147,10 +155,13 @@ function AnalyzerPage() {
                     }}
                 />
 
-                <p>Selected file: {fileName || 'No file selected'}</p>
+                <p className="analyzer-file-state">Selected file: {fileName || 'No file selected'}</p>
 
                 {imageDataUrl && (
-                    <img className="analyzer-preview" src={imageDataUrl} alt="Food preview" />
+                    <div className="analyzer-preview-card">
+                        <p>Preview</p>
+                        <img className="analyzer-preview" src={imageDataUrl} alt="Food preview" />
+                    </div>
                 )}
 
                 <label>
@@ -184,20 +195,33 @@ function AnalyzerPage() {
 
             {analysis && (
                 <div className="analyzer-card">
-                    <p>Detected meal: {analysis.mealName}</p>
+                    <p className="analyzer-result-label">Detected meal</p>
+                    <p className="analyzer-result-title">{analysis.mealName}</p>
                     <div className="analyzer-metrics">
-                        <p>Estimated calories: {analysis.calories} kcal</p>
-                        <p>Protein: {analysis.protein} g</p>
-                        <p>Fat: {analysis.fat} g</p>
-                        <p>Carbs: {analysis.carbs} g</p>
+                        <p>
+                            <span>Estimated calories</span>
+                            <strong>{analysis.calories} kcal</strong>
+                        </p>
+                        <p>
+                            <span>Protein</span>
+                            <strong>{analysis.protein} g</strong>
+                        </p>
+                        <p>
+                            <span>Fat</span>
+                            <strong>{analysis.fat} g</strong>
+                        </p>
+                        <p>
+                            <span>Carbs</span>
+                            <strong>{analysis.carbs} g</strong>
+                        </p>
                     </div>
-                    <p>Recommendation: {analysis.recommendation}</p>
+                    <p className="analyzer-recommendation">Recommendation: {analysis.recommendation}</p>
 
                     <button type="button" onClick={handleSaveToDashboard}>
                         Save to dashboard
                     </button>
 
-                    {saveMessage && <p>{saveMessage}</p>}
+                    {saveMessage && <p className="analyzer-save-message">{saveMessage}</p>}
                 </div>
             )}
         </div>
