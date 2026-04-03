@@ -119,7 +119,7 @@ function AnalyzerPage() {
     return (
         <div className="analyzer-page">
             <h1>AI Food Analyzer</h1>
-            <p>Upload a food image and get a demo nutrition insight.</p>
+            <p>Upload a food photo, review the mock nutrition result, and save the entry to your dashboard timeline.</p>
 
             <div className="analyzer-actions">
                 <input
@@ -185,10 +185,12 @@ function AnalyzerPage() {
             {analysis && (
                 <div className="analyzer-card">
                     <p>Detected meal: {analysis.mealName}</p>
-                    <p>Estimated calories: {analysis.calories} kcal</p>
-                    <p>Protein: {analysis.protein} g</p>
-                    <p>Fat: {analysis.fat} g</p>
-                    <p>Carbs: {analysis.carbs} g</p>
+                    <div className="analyzer-metrics">
+                        <p>Estimated calories: {analysis.calories} kcal</p>
+                        <p>Protein: {analysis.protein} g</p>
+                        <p>Fat: {analysis.fat} g</p>
+                        <p>Carbs: {analysis.carbs} g</p>
+                    </div>
                     <p>Recommendation: {analysis.recommendation}</p>
 
                     <button type="button" onClick={handleSaveToDashboard}>
