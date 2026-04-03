@@ -34,55 +34,68 @@ function TimerPage() {
 
     return (
         <div className="timer-page">
-            <h1>Timer Page</h1>
+            <div className="page-heading">
+                <img src="/timer-card.png" alt="Timer page icon" />
+                <h1>Timer Page</h1>
+            </div>
             <p>Use quick presets, stay focused, and track each countdown with a simple workout timer.</p>
 
             <div className="timer-card">
-                <p className="timer-value">
-                    {minutes}:{remainingSeconds}
-                </p>
-                <p className="timer-status">
-                    Status: {isRunning ? 'Running' : 'Paused'}
-                </p>
-                {seconds === 0 && <p className="timer-finished">Timer finished!</p>}
-            </div>
+                <div className="timer-main">
+                    <p className="timer-label">Workout countdown</p>
+                    <p className="timer-value">
+                        {minutes}:{remainingSeconds}
+                    </p>
+                    <p className="timer-status">
+                        Status <span>{isRunning ? 'Running' : 'Paused'}</span>
+                    </p>
+                    {seconds === 0 && <p className="timer-finished">Timer finished!</p>}
+                </div>
 
-            <div className="timer-actions">
-                <button type="button" onClick={() => setPreset(30)}>
-                    30 sec
-                </button>
+                <div className="timer-panel">
+                    <div className="timer-actions timer-presets">
+                        <button type="button" onClick={() => setPreset(30)}>
+                            30 sec
+                        </button>
 
-                <button type="button" onClick={() => setPreset(60)}>
-                    60 sec
-                </button>
+                        <button type="button" onClick={() => setPreset(60)}>
+                            60 sec
+                        </button>
 
-                <button type="button" onClick={() => setPreset(90)}>
-                    90 sec
-                </button>
-            </div>
+                        <button type="button" onClick={() => setPreset(90)}>
+                            90 sec
+                        </button>
+                    </div>
 
-            <div className="timer-actions">
-                <button type="button" onClick={() => setSeconds(seconds + 10)}>
-                    Add 10 seconds
-                </button>
+                    <div className="timer-actions timer-controls">
+                        <button
+                            type="button"
+                            className="timer-secondary"
+                            onClick={() => setSeconds(seconds + 10)}
+                        >
+                            +10 sec
+                        </button>
 
-                <button
-                    type="button"
-                    onClick={() => {
-                    setSeconds(60);
-                    setIsRunning(false);
-                    }}
-                >
-                    Reset
-                </button>
+                        <button
+                            type="button"
+                            className="timer-secondary"
+                            onClick={() => {
+                                setSeconds(60);
+                                setIsRunning(false);
+                            }}
+                        >
+                            Reset
+                        </button>
 
-                <button type="button" onClick={() => setIsRunning(true)}>
-                    Start timer
-                </button>
+                        <button type="button" className="timer-primary" onClick={() => setIsRunning(true)}>
+                            Start
+                        </button>
 
-                <button type="button" onClick={() => setIsRunning(false)}>
-                    Pause
-                </button>
+                        <button type="button" className="timer-ghost" onClick={() => setIsRunning(false)}>
+                            Pause
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     );
