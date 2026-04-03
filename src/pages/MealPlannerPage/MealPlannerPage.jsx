@@ -67,11 +67,19 @@ function MealPlannerPage() {
 
     return (
         <div className="meal-page">
-            <h1>Meal Planner Page</h1>
+            <div className="page-heading">
+                <img src="/meals-card.png" alt="Meals page icon" />
+                <h1>Meal Planner Page</h1>
+            </div>
             <p>Build a simple daily meal plan, keep track of your entries, and manage everything in one place.</p>
             <p>Total meals: {meals.length}</p>
 
             <div className="meal-form">
+                <div className="meal-form-heading">
+                    <p>Plan your next meal</p>
+                    <span>Keep entries simple, clear, and easy to update during the day.</span>
+                </div>
+
                 <input
                     type="text"
                     placeholder="Enter meal name"

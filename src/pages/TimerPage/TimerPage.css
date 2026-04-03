@@ -36,6 +36,7 @@
 
 .timer-card {
     width: min(860px, 100%);
+    margin: 0 auto;
     display: grid;
     grid-template-columns: minmax(0, 1fr) 280px;
     align-items: center;
