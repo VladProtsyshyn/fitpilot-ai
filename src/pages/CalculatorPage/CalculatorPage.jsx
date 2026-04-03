@@ -57,20 +57,52 @@ function CalculatorPage() {
 
     return (
         <div className="calculator-page">
-            <h1>Calculator Page</h1>
+            <div className="page-heading">
+                <img src="/calculator-card.png" alt="Calculator page icon" />
+                <h1>Calculator Page</h1>
+            </div>
             <p>Review your BMI, estimated calorie needs, and a simple recommendation based on your goal.</p>
 
             <div className="calculator-card">
-                <p>Weight: {profile.weight}</p>
-                <p>Height: {profile.height}</p>
-                <p>Age: {profile.age}</p>
-                <p>Activity level: {profile.activityLevel}</p>
-                <p>Sex: {profile.sex}</p>
+                <div className="calculator-profile">
+                    <p>
+                        <span>Weight</span>
+                        <strong>{profile.weight || 'not set'}</strong>
+                    </p>
+                    <p>
+                        <span>Height</span>
+                        <strong>{profile.height || 'not set'}</strong>
+                    </p>
+                    <p>
+                        <span>Age</span>
+                        <strong>{profile.age || 'not set'}</strong>
+                    </p>
+                    <p>
+                        <span>Activity level</span>
+                        <strong>{profile.activityLevel || 'not selected'}</strong>
+                    </p>
+                    <p>
+                        <span>Sex</span>
+                        <strong>{profile.sex || 'not selected'}</strong>
+                    </p>
+                </div>
                 <div className="calculator-highlights">
-                    <p>BMI: {bmi}</p>
-                    <p>Status: {bmiStatus}</p>
-                    <p>BMR: {bmr}</p>
-                    <p>Daily calories: {dailyCalories}</p>
+                    <p>
+                        <span>BMI</span>
+                        <strong>{bmi || 'not calculated'}</strong>
+                    </p>
+                    <p>
+                        <span>Status</span>
+                        <strong>{bmiStatus || 'not available'}</strong>
+                    </p>
+                    <p>
+                        <span>BMR</span>
+                        <strong>{bmr || 'not calculated'}</strong>
+                    </p>
+                    <p>
+                        <span>Daily calories</span>
+                        <strong>{dailyCalories || 'not calculated'}</strong>
+                    </p>
                 </div>
                 <p>{calorieRecommendation}</p>
             </div>

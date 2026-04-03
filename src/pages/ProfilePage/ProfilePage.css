@@ -52,13 +52,29 @@
 }
 
 .profile-summary p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
     margin: 0;
     padding: 12px 14px;
-    background-color: rgba(255, 255, 255, 0.52);
+    background:
+        linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(252, 244, 235, 0.96));
     border: 1px solid rgba(231, 220, 205, 0.82);
     border-radius: var(--radius-md);
-    line-height: 1.6;
+    box-shadow: var(--shadow-soft);
     font-size: 0.98rem;
+}
+
+.profile-summary p span {
+    color: var(--color-text-soft);
+    font-weight: 700;
+}
+
+.profile-summary p strong {
+    color: var(--color-text);
+    font-weight: 800;
+    text-transform: capitalize;
 }
 
 .profile-form {
@@ -98,8 +114,10 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     color: var(--color-text-soft);
 }
 
@@ -115,6 +133,9 @@
         background-color var(--transition-base),
         border-color var(--transition-base),
         box-shadow var(--transition-base);
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 .profile-form input:focus,
@@ -140,6 +161,7 @@
         transform var(--transition-base),
         background-color var(--transition-base),
         box-shadow var(--transition-base);
+    letter-spacing: 0.01em;
 }
 
 .profile-form button:hover {

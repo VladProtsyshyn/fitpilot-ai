@@ -170,13 +170,34 @@ function ProfilePage() {
                         <span>Quick summary of the details currently shaping your app insights.</span>
                     </div>
 
-                    <p>Name: {profile.name}</p>
-                    <p>Age: {profile.age}</p>
-                    <p>Weight: {profile.weight}</p>
-                    <p>Height: {profile.height}</p>
-                    <p>Goal: {profile.goal}</p>
-                    <p>Activity level: {profile.activityLevel}</p>
-                    <p>Sex: {profile.sex}</p>
+                    <p>
+                        <span>Name</span>
+                        <strong>{profile.name || 'not set'}</strong>
+                    </p>
+                    <p>
+                        <span>Age</span>
+                        <strong>{profile.age || 'not set'}</strong>
+                    </p>
+                    <p>
+                        <span>Weight</span>
+                        <strong>{profile.weight || 'not set'}</strong>
+                    </p>
+                    <p>
+                        <span>Height</span>
+                        <strong>{profile.height || 'not set'}</strong>
+                    </p>
+                    <p>
+                        <span>Goal</span>
+                        <strong>{profile.goal || 'not selected'}</strong>
+                    </p>
+                    <p>
+                        <span>Activity level</span>
+                        <strong>{profile.activityLevel || 'not selected'}</strong>
+                    </p>
+                    <p>
+                        <span>Sex</span>
+                        <strong>{profile.sex || 'not selected'}</strong>
+                    </p>
 
                     <button type="button" onClick={handleResetProfile}>
                         Reset profile
