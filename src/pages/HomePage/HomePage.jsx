@@ -4,34 +4,36 @@ import ArrowLeftIcon from '../../components/icons/ArrowLeftIcon';
 import ArrowRightIcon from '../../components/icons/ArrowRightIcon';
 import './HomePage.css';
 
+const assetBase = import.meta.env.BASE_URL;
+
 const showcaseItems = [
     {
-        image: '/profile-card.png',
+        image: `${assetBase}profile-card.png`,
         title: 'Profile',
         description: 'Create your personal fitness profile and define your health goals.',
     },
     {
-        image: '/dashboard-card.png',
+        image: `${assetBase}dashboard-card.png`,
         title: 'Dashboard',
         description: 'Review your daily progress, nutrition summary, and recent activity.',
     },
     {
-        image: '/calculator-card.png',
+        image: `${assetBase}calculator-card.png`,
         title: 'Calculator',
         description: 'Check BMI, daily calories, and recommendations based on your profile.',
     },
     {
-        image: '/timer-card.png',
+        image: `${assetBase}timer-card.png`,
         title: 'Timer',
         description: 'Use presets and countdown sessions to stay focused during workouts.',
     },
     {
-        image: '/meals-card.png',
+        image: `${assetBase}meals-card.png`,
         title: 'Meals',
         description: 'Organize your meals, keep a simple plan, and stay consistent each day.',
     },
     {
-        image: '/analyzer-card.png',
+        image: `${assetBase}analyzer-card.png`,
         title: 'Analyzer',
         description: 'Upload food visuals and connect them with your nutrition tracking flow.',
     },
@@ -84,7 +86,11 @@ function HomePage() {
                     </p>
                 </div>
 
-                <img className="home-hero-visual" src="/hero-visual.png" alt="FitPilot AI visual" />
+                <img
+                    className="home-hero-visual"
+                    src={`${assetBase}hero-visual.png`}
+                    alt="FitPilot AI visual"
+                />
 
                 <div className="home-actions">
                     <Link to="/profile">Set up profile</Link>

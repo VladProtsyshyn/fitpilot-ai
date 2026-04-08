@@ -8,6 +8,8 @@ import {
 } from '../../utils/nutrition';
 import './DashboardPage.css';
 
+const assetBase = import.meta.env.BASE_URL;
+
 function DashboardPage() {
     const profile = useSelector((state) => state.profile);
     const [meals, setMeals] = useState([]);
@@ -91,7 +93,7 @@ function DashboardPage() {
     return (
         <div className="dashboard-page">
             <div className="page-heading">
-                <img src="/dashboard-card.png" alt="Dashboard page icon" />
+                <img src={`${assetBase}dashboard-card.png`} alt="Dashboard page icon" />
                 <h1>Dashboard Page</h1>
             </div>
             <p>Track your daily nutrition, review progress, and keep the most important health signals in one place.</p>

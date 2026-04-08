@@ -5,6 +5,8 @@ import { getProfileFromStorage, saveProfileToStorage } from '../../services/stor
 
 import './ProfilePage.css';
 
+const assetBase = import.meta.env.BASE_URL;
+
 function ProfilePage() {
     const dispatch = useDispatch();
     const profile = useSelector((state) => state.profile);
@@ -67,7 +69,7 @@ function ProfilePage() {
     return (
         <div className="profile-page">
             <div className="page-heading">
-                <img src="/profile-card.png" alt="Profile page icon" />
+                <img src={`${assetBase}profile-card.png`} alt="Profile page icon" />
                 <h1>Profile Page</h1>
             </div>
             <p>Build your personal nutrition and fitness profile to unlock better daily insights.</p>

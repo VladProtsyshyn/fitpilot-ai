@@ -4,6 +4,8 @@ import Modal from '../../components/Modal/Modal';
 import TrashIcon from '../../components/icons/TrashIcon';
 import './MealPlannerPage.css';
 
+const assetBase = import.meta.env.BASE_URL;
+
 function MealPlannerPage() {
     const [meals, setMeals] = useState([
         { id: 1, name: 'Oatmeal' },
@@ -68,7 +70,7 @@ function MealPlannerPage() {
     return (
         <div className="meal-page">
             <div className="page-heading">
-                <img src="/meals-card.png" alt="Meals page icon" />
+                <img src={`${assetBase}meals-card.png`} alt="Meals page icon" />
                 <h1>Meal Planner Page</h1>
             </div>
             <p>Build a simple daily meal plan, keep track of your entries, and manage everything in one place.</p>

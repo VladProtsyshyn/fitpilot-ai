@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { getMealsFromStorage, saveMealsToStorage } from '../../services/storageService';
 import './AnalyzerPage.css';
 
+const assetBase = import.meta.env.BASE_URL;
+
 const mockAnalysisPresets = [
     {
         keywords: ['oat', 'apple', 'berry', 'breakfast', 'porridge'],
@@ -119,7 +121,7 @@ function AnalyzerPage() {
     return (
         <div className="analyzer-page">
             <div className="page-heading">
-                <img src="/analyzer-card.png" alt="Analyzer page icon" />
+                <img src={`${assetBase}analyzer-card.png`} alt="Analyzer page icon" />
                 <h1>AI Food Analyzer</h1>
             </div>
             <p>Upload a food photo, review the mock nutrition result, and save the entry to your dashboard timeline.</p>

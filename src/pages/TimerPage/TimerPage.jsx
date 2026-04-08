@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import './TimerPage.css';
 
+const assetBase = import.meta.env.BASE_URL;
+
 function TimerPage() {
     const [seconds, setSeconds] = useState(60);
     const [isRunning, setIsRunning] = useState(false);
@@ -35,7 +37,7 @@ function TimerPage() {
     return (
         <div className="timer-page">
             <div className="page-heading">
-                <img src="/timer-card.png" alt="Timer page icon" />
+                <img src={`${assetBase}timer-card.png`} alt="Timer page icon" />
                 <h1>Timer Page</h1>
             </div>
             <p>Use quick presets, stay focused, and track each countdown with a simple workout timer.</p>
