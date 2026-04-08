@@ -61,13 +61,11 @@ npm run build
 
 ### GitHub Pages
 
-The project is configured for GitHub Pages deployment through GitHub Actions.
+The project is deployed on GitHub Pages through GitHub Actions.
 
-Expected production URL:
+Live demo:
 
-```txt
-https://vladprotsyshyn.github.io/fitpilot-ai/
-```
+[https://vladprotsyshyn.github.io/fitpilot-ai/](https://vladprotsyshyn.github.io/fitpilot-ai/)
 
 ### Screenshots
 
@@ -151,13 +149,11 @@ npm run build
 
 ### GitHub Pages
 
-Проект уже підготовлений до деплою на GitHub Pages через GitHub Actions.
+Проект уже задеплоєний на GitHub Pages через GitHub Actions.
 
-Очікуване production-посилання:
+Живий демо-лінк:
 
-```txt
-https://vladprotsyshyn.github.io/fitpilot-ai/
-```
+[https://vladprotsyshyn.github.io/fitpilot-ai/](https://vladprotsyshyn.github.io/fitpilot-ai/)
 
 ### Скріншоти
 
