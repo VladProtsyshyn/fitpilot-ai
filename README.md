@@ -1,23 +1,23 @@
-# FitPilot AI
+﻿# FitPilot AI
 
-FitPilot AI is a wellness-focused React application for tracking personal profile data, meals, timer sessions, nutrition insights, and simple health calculations in one cohesive workspace.
+FitPilot AI is a wellness-focused React application for tracking profile data, meals, timer sessions, nutrition insights, and simple health calculations in one cohesive workspace.
 
 ## English
 
 ### Overview
 
-FitPilot AI is a front-end fitness and nutrition dashboard built as a polished multi-page SPA.  
+FitPilot AI is a polished front-end fitness and nutrition dashboard built as a multi-page SPA.  
 The project combines profile setup, BMI and calorie calculations, meal planning, dashboard summaries, a workout timer, and a mock AI food analyzer.
 
 ### Main Features
 
 - Personal profile setup with persistent local storage
-- Dashboard with BMI, progress, calorie and macro overview
+- Dashboard with BMI, progress, calorie, and macro overview
 - Calculator page for BMI, BMR, daily calories, and recommendations
 - Workout timer with presets and action controls
 - Meal planner with add, delete, clear, and modal tips
 - Mock AI food analyzer with image preview and nutrition result panel
-- Styled multi-page experience with shared branding, icons, and soft animations
+- Shared branding, icons, warm UI system, and soft page animations
 
 ### Pages
 
@@ -59,6 +59,16 @@ npm run lint
 npm run build
 ```
 
+### GitHub Pages
+
+The project is configured for GitHub Pages deployment through GitHub Actions.
+
+Expected production URL:
+
+```txt
+https://vladprotsyshyn.github.io/fitpilot-ai/
+```
+
 ### Screenshots
 
 #### Home
@@ -87,7 +97,7 @@ npm run build
 
 ### Опис
 
-FitPilot AI — це front-end застосунок у wellness-стилі для збереження профілю, планування харчування, роботи з таймером, перегляду базових nutrition-інсайтів та простих health-обчислень в одному цілісному інтерфейсі.
+FitPilot AI — це front-end застосунок у wellness-стилі для збереження профілю, планування харчування, роботи з таймером, перегляду nutrition-інсайтів і простих health-обчислень в одному цілісному інтерфейсі.
 
 ### Основні можливості
 
@@ -137,6 +147,16 @@ http://localhost:5173/
 npm run dev
 npm run lint
 npm run build
+```
+
+### GitHub Pages
+
+Проект уже підготовлений до деплою на GitHub Pages через GitHub Actions.
+
+Очікуване production-посилання:
+
+```txt
+https://vladprotsyshyn.github.io/fitpilot-ai/
 ```
 
 ### Скріншоти

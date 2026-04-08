@@ -145,8 +145,10 @@ function foodAnalyzerApiPlugin(apiKey) {
 export default defineConfig(({ mode }) => {
   const cwd = globalThis.process?.cwd?.() ?? ''
   const env = loadEnv(mode, cwd, '')
+  const base = mode === 'production' ? '/fitpilot-ai/' : '/'
 
   return {
+    base,
     plugins: [react(), foodAnalyzerApiPlugin(env.OPENAI_API_KEY)],
   }
 })
