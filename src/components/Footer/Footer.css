@@ -127,3 +127,28 @@ footer {
     line-height: 1.5;
     color: var(--color-text-soft);
 }
+
+@media (max-width: 768px) {
+    footer {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 18px;
+        padding: 22px 18px;
+        text-align: center;
+    }
+
+    .footer-brand,
+    .footer-contact,
+    .footer-meta {
+        justify-self: center;
+        align-items: center;
+    }
+
+    .footer-divider {
+        min-width: 140px;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}

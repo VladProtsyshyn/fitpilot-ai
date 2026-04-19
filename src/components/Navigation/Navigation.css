@@ -87,3 +87,47 @@ nav a.active {
     color: var(--color-accent);
     box-shadow: var(--shadow-soft);
 }
+
+@media (max-width: 768px) {
+    nav {
+        align-items: stretch;
+        gap: 12px;
+        padding: 10px 12px 12px;
+    }
+
+    .nav-brand {
+        padding: 8px 12px 10px;
+        border-radius: 0 0 var(--radius-md) var(--radius-md);
+        margin-bottom: -18px;
+    }
+
+    .nav-brand p {
+        font-size: 1.65rem;
+    }
+
+    .nav-brand span {
+        font-size: 0.58rem;
+        letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 6px;
+        max-width: calc(100vw - 150px);
+        padding: 6px;
+        border-radius: 999px;
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav a {
+        white-space: nowrap;
+        padding: 8px 11px;
+        font-size: 0.88rem;
+    }
+}

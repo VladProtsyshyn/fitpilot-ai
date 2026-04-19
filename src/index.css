@@ -214,6 +214,23 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  p {
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 12vw, 2.8rem);
+    line-height: 0.95;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

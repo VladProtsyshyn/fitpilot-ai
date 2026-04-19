@@ -132,3 +132,41 @@
     font-weight: 800;
     box-shadow: var(--shadow-soft);
 }
+
+@media (max-width: 768px) {
+    .calculator-page {
+        gap: 18px;
+    }
+
+    .page-heading {
+        gap: 10px;
+    }
+
+    .page-heading img {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .calculator-page > p {
+        font-size: 0.94rem;
+    }
+
+    .calculator-card {
+        padding: 20px;
+    }
+
+    .calculator-profile p {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .calculator-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-highlights strong {
+        font-size: 1.45rem;
+    }
+}

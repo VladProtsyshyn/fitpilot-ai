@@ -195,3 +195,51 @@
 .timer-actions .timer-primary {
     flex: 1 1 calc(50% - 5px);
 }
+
+@media (max-width: 768px) {
+    .timer-page {
+        gap: 18px;
+    }
+
+    .page-heading {
+        gap: 10px;
+    }
+
+    .page-heading img {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .timer-page > p {
+        font-size: 0.94rem;
+    }
+
+    .timer-card {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 18px;
+    }
+
+    .timer-main {
+        align-items: center;
+        text-align: center;
+    }
+
+    .timer-value {
+        font-size: clamp(4rem, 22vw, 5.5rem);
+    }
+
+    .timer-panel {
+        align-items: stretch;
+    }
+
+    .timer-actions {
+        justify-content: center;
+    }
+
+    .timer-controls button,
+    .timer-presets button {
+        flex: 1 1 120px;
+    }
+}

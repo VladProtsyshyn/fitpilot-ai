@@ -10,3 +10,14 @@ main {
     padding: 150px 0 24px;
     flex: 1;
 }
+
+@media (max-width: 768px) {
+    .layout-shell {
+        min-height: calc(100vh - 70px);
+    }
+
+    main {
+        width: min(100% - 24px, 1120px);
+        padding: 116px 0 18px;
+    }
+}

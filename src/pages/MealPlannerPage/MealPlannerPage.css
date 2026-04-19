@@ -184,3 +184,45 @@
     background-color: rgba(215, 140, 91, 0.24);
     box-shadow: var(--shadow-medium);
 }
+
+@media (max-width: 768px) {
+    .meal-page {
+        gap: 18px;
+    }
+
+    .page-heading {
+        gap: 10px;
+    }
+
+    .page-heading img {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .meal-page > p {
+        font-size: 0.94rem;
+    }
+
+    .meal-form {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .meal-form-heading {
+        grid-column: auto;
+    }
+
+    .meal-form input,
+    .meal-form button {
+        width: 100%;
+    }
+
+    .meal-list {
+        padding: 20px;
+    }
+
+    .meal-list li {
+        gap: 12px;
+    }
+}

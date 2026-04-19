@@ -284,3 +284,46 @@
     color: var(--color-accent);
     font-weight: 800;
 }
+
+@media (max-width: 768px) {
+    .analyzer-page {
+        gap: 18px;
+    }
+
+    .page-heading {
+        gap: 10px;
+    }
+
+    .page-heading img {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .analyzer-page > p {
+        font-size: 0.94rem;
+    }
+
+    .analyzer-actions,
+    .analyzer-card {
+        padding: 20px;
+    }
+
+    .analyzer-actions input,
+    .analyzer-actions button,
+    .analyzer-actions label {
+        width: 100%;
+    }
+
+    .analyzer-preview-card {
+        max-width: 100%;
+    }
+
+    .analyzer-preview {
+        max-height: 240px;
+    }
+
+    .analyzer-metrics {
+        grid-template-columns: 1fr;
+    }
+}
