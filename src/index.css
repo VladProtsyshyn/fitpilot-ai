@@ -214,6 +214,18 @@ footer {
   }
 }
 
+.page-loading {
+  width: fit-content;
+  margin: 60px auto;
+  padding: 14px 20px;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.98), rgba(246, 232, 220, 0.94));
+  color: var(--color-primary);
+  font-weight: 800;
+  box-shadow: var(--shadow-soft);
+}
+
 @media (max-width: 768px) {
   body::before,
   body::after {

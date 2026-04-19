@@ -38,6 +38,13 @@ The project combines profile setup, BMI and calorie calculations, meal planning,
 - CSS
 - Local Storage
 
+### Performance & Code Quality
+
+- Route-level code splitting with `React.lazy` and `Suspense`
+- Lazy loading for non-critical images
+- Reusable shared components for repeated page structure
+- Removed unused dependencies to keep the bundle cleaner
+
 ### Run Locally
 
 ```bash
@@ -125,6 +132,13 @@ FitPilot AI — це front-end застосунок у wellness-стилі дл�
 - React Router
 - CSS
 - Local Storage
+
+### Оптимізація та якість коду
+
+- Route-level code splitting через `React.lazy` і `Suspense`
+- Lazy loading для другорядних зображень
+- Повторювані частини інтерфейсу винесені у reusable components
+- Видалені невикористані залежності для чистішої збірки
 
 ### Запуск локально
 

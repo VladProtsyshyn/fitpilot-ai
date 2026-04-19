@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { getMealsFromStorage, saveMealsToStorage } from '../../services/storageService';
 import Modal from '../../components/Modal/Modal';
 import TrashIcon from '../../components/icons/TrashIcon';
+import PageHeading from '../../components/PageHeading/PageHeading';
+
 import './MealPlannerPage.css';
 
 const assetBase = import.meta.env.BASE_URL;
@@ -69,10 +71,11 @@ function MealPlannerPage() {
 
     return (
         <div className="meal-page">
-            <div className="page-heading">
-                <img src={`${assetBase}meals-card.png`} alt="Meals page icon" />
-                <h1>Meal Planner Page</h1>
-            </div>
+            <PageHeading
+                image={`${assetBase}meals-card.png`}
+                title="Meal Planner Page"
+                alt="Meals page icon"
+            />
             <p>Build a simple daily meal plan, keep track of your entries, and manage everything in one place.</p>
             <p>Total meals: {meals.length}</p>
 

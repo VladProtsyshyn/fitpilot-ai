@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { getMealsFromStorage, saveMealsToStorage } from '../../services/storageService';
+import PageHeading from '../../components/PageHeading/PageHeading';
+
 import './AnalyzerPage.css';
 
 const assetBase = import.meta.env.BASE_URL;
@@ -120,10 +122,11 @@ function AnalyzerPage() {
 
     return (
         <div className="analyzer-page">
-            <div className="page-heading">
-                <img src={`${assetBase}analyzer-card.png`} alt="Analyzer page icon" />
-                <h1>AI Food Analyzer</h1>
-            </div>
+            <PageHeading
+                image={`${assetBase}analyzer-card.png`}
+                title="AI Food Analyzer"
+                alt="Analyzer page icon"
+            />
             <p>Upload a food photo, review the mock nutrition result, and save the entry to your dashboard timeline.</p>
 
             <div className="analyzer-actions">

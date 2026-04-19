@@ -1,4 +1,6 @@
 import { useSelector } from 'react-redux';
+import PageHeading from '../../components/PageHeading/PageHeading';
+
 import './CalculatorPage.css';
 
 const assetBase = import.meta.env.BASE_URL;
@@ -59,10 +61,11 @@ function CalculatorPage() {
 
     return (
         <div className="calculator-page">
-            <div className="page-heading">
-                <img src={`${assetBase}calculator-card.png`} alt="Calculator page icon" />
-                <h1>Calculator Page</h1>
-            </div>
+            <PageHeading
+                image={`${assetBase}calculator-card.png`}
+                title="Calculator Page"
+                alt="Calculator page icon"
+            />
             <p>Review your BMI, estimated calorie needs, and a simple recommendation based on your goal.</p>
 
             <div className="calculator-card">

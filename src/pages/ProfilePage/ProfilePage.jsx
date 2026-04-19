@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetProfile, setProfile } from '../../store/slices/profileSlice';
 import { getProfileFromStorage, saveProfileToStorage } from '../../services/storageService';
+import PageHeading from '../../components/PageHeading/PageHeading';
 
 import './ProfilePage.css';
 
@@ -68,10 +69,11 @@ function ProfilePage() {
 
     return (
         <div className="profile-page">
-            <div className="page-heading">
-                <img src={`${assetBase}profile-card.png`} alt="Profile page icon" />
-                <h1>Profile Page</h1>
-            </div>
+            <PageHeading
+                image={`${assetBase}profile-card.png`}
+                title="Profile Page"
+                alt="Profile page icon"
+            />
             <p>Build your personal nutrition and fitness profile to unlock better daily insights.</p>
 
             <div className="profile-grid">

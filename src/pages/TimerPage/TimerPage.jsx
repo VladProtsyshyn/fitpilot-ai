@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import PageHeading from '../../components/PageHeading/PageHeading';
+
 import './TimerPage.css';
 
 const assetBase = import.meta.env.BASE_URL;
@@ -36,10 +38,11 @@ function TimerPage() {
 
     return (
         <div className="timer-page">
-            <div className="page-heading">
-                <img src={`${assetBase}timer-card.png`} alt="Timer page icon" />
-                <h1>Timer Page</h1>
-            </div>
+            <PageHeading
+                image={`${assetBase}timer-card.png`}
+                title="Timer Page"
+                alt="Timer page icon"
+            />
             <p>Use quick presets, stay focused, and track each countdown with a simple workout timer.</p>
 
             <div className="timer-card">

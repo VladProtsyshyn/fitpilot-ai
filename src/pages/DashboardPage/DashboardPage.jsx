@@ -6,6 +6,8 @@ import {
     getDailyCaloriesTarget,
     getMacroTargets,
 } from '../../utils/nutrition';
+import PageHeading from '../../components/PageHeading/PageHeading';
+
 import './DashboardPage.css';
 
 const assetBase = import.meta.env.BASE_URL;
@@ -92,10 +94,11 @@ function DashboardPage() {
 
     return (
         <div className="dashboard-page">
-            <div className="page-heading">
-                <img src={`${assetBase}dashboard-card.png`} alt="Dashboard page icon" />
-                <h1>Dashboard Page</h1>
-            </div>
+            <PageHeading
+                image={`${assetBase}dashboard-card.png`}
+                title="Dashboard Page"
+                alt="Dashboard page icon"
+            />
             <p>Track your daily nutrition, review progress, and keep the most important health signals in one place.</p>
 
             <div className="dashboard-filter">
