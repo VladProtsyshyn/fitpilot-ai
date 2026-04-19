@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navigation.css';
 
 function Navigation() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     return (
         <nav>
             <div className="nav-brand">
@@ -9,27 +12,39 @@ function Navigation() {
                 <span>Wellness dashboard</span>
             </div>
 
-            <ul className="nav-links">
+            <button
+                    type="button"
+                    className="nav-toggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded={isMenuOpen}
+                    onClick={() => setIsMenuOpen((prevState) => !prevState)}
+                >
+                    <span />
+                    <span />
+                    <span />
+            </button>
+
+            <ul className={`nav-links ${isMenuOpen ? 'is-open' : ''}`}>
                 <li>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/" onClick={() => setIsMenuOpen(false)}>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/profile">Profile</NavLink>
+                    <NavLink to="/profile" onClick={() => setIsMenuOpen(false)}>Profile</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/dashboard">Dashboard</NavLink>
+                    <NavLink to="/dashboard" onClick={() => setIsMenuOpen(false)}>Dashboard</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/calculator">Calculator</NavLink>
+                    <NavLink to="/calculator" onClick={() => setIsMenuOpen(false)}>Calculator</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/timer">Timer</NavLink>
+                    <NavLink to="/timer" onClick={() => setIsMenuOpen(false)}>Timer</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/meals">Meals</NavLink>
+                    <NavLink to="/meals" onClick={() => setIsMenuOpen(false)}>Meals</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/analyzer">Analyzer</NavLink>
+                    <NavLink to="/analyzer" onClick={() => setIsMenuOpen(false)}>Analyzer</NavLink>
                 </li>
             </ul>
         </nav>
